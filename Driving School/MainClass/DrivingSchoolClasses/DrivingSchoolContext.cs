@@ -155,9 +155,19 @@ namespace Driving_School.DB.DrivingSchoolClasses
                     .HasMaxLength(50);
             });
 
-            OnModelCreatingPartial(modelBuilder);
+             OnModelCreatingPartial(modelBuilder);
+            modelBuilder.Entity<Student>().HasData(
+                new Student { StudentId = 1, FirstName = "yakov", LastName = "lulu", Email = "yoy@gmail.com", UserName = "yasha111", Password = "123123" }
+                ) ;
+            modelBuilder.Entity<DrivingInstructor>().HasData(
+                new DrivingInstructor {DrivingInstructorsId = 1 ,FirstName = "gil",LastName = "alkobi", Email = "gilnotok@gmail.com",UserName = "gilgul",Password = "124126" }
+                );
+
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+
+
